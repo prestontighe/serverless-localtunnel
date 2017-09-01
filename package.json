@@ -1,0 +1,30 @@
+{
+  "name": "serverless-localtunnel",
+  "version": "0.0.1",
+  "description": "Runs a localtunnel in your Serverless build process",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toosick/serverless-localtunnel.git"
+  },
+  "keywords": [
+    "localtunnel",
+    "serverless",
+    "serverless-offline",
+    "localhost",
+    "lambda"
+  ],
+  "author": "Preston Tighe <preston_tighe@yahoo.com> (https://github.com/toosick)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toosick/serverless-localtunnel/issues"
+  },
+  "homepage": "https://github.com/toosick/serverless-localtunnel#readme",
+  "dependencies": {
+    "localtunnel": "^1.8.3",
+    "nested-property": "^0.0.7"
+  }
+}
