@@ -9,7 +9,7 @@ plugins:
   # - serverless-client-s3
   # - serverless-dynamodb-local
   - serverless-offline
-  - local-tunnel
+  - serverless-localtunnel
 ```
 You are required to run serverless-offline before local-tunnel. You have to have serverless-offline enabled to run this plugin.
 ```
