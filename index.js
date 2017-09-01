@@ -1,5 +1,5 @@
 const localtunnel = require('localtunnel')
-const nested = require('nested-property')
+const _ = require('lodash.get')
 
 class LocalTunnel {
   constructor (serverless, options) {
@@ -13,7 +13,7 @@ class LocalTunnel {
   runServer () {
     let serverRestarted = false
     try{
-      const tunnel = localtunnel(8080, {subdomain: nested.get(this.serverless, 'custom.localtunnel.subdomain')}, (err, tunnel) => {
+      const tunnel = localtunnel(_.get(this.serverless, 'custom.localtunnel.port', 8080), {subdomain: _.get(this.serverless, 'custom.localtunnel.subdomain')}, (err, tunnel) => {
         if (err) {
           console.log(err)
         }else{

@@ -16,6 +16,7 @@ You are required to run serverless-offline before local-tunnel. You have to have
 custom:
   localtunnel:
     subdomain: my-custom-subdomain
+    port: 8080
 ```
 ## Contributing
 
