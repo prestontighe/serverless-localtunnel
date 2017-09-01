@@ -12,15 +12,17 @@ class ServerlessLocaltunnel {
   runServer() {
     this.serverless.cli.log('Localtunnel running server')
     let serverRestarted = false
-    const errorHandler = e => {
+    let tunnel
+    const errorHandler = (e) => {
       this.serverless.cli.log('Localtunnel error - restarting in 5 seconds')
       console.log(e)
       if(serverRestarted) return
       serverRestarted = true
+      tunnel.close()
       setTimeout(this.runServer.bind(this), 5000)
     }
     try {
-      const tunnel = localtunnel(_.get(this.serverless, 'service.custom.localtunnel.port', 8080), {subdomain: _.get(this.serverless, 'service.custom.localtunnel.subdomain')}, (err, tunnel) => {
+      tunnel = localtunnel(_.get(this.serverless, 'service.custom.localtunnel.port', 8080), {subdomain: _.get(this.serverless, 'service.custom.localtunnel.subdomain')}, (err, tunnel) => {
         if (err) {
           this.serverless.cli.log('Localtunnel error')
         }else{
