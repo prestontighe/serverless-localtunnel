@@ -1,39 +1,44 @@
 const localtunnel = require('localtunnel')
-const _ = require('lodash.get')
+const _ = require('lodash')
 
-class LocalTunnel {
+class ServerlessLocaltunnel {
   constructor (serverless, options) {
-    this.serverless = serverless;
-    this.options = options;
+    this.serverless = serverless
+    this.options = options
     this.hooks = {
-      'before:offline:start:init': this.runServer.bind(this),
+      'before:offline:start:init': this.runServer.bind(this)
     }
   }
-
-  runServer () {
+  runServer() {
+    console.log('runServer')
+    this.serverless.cli.log('runServer')
+    console.log('runServer 2')
     let serverRestarted = false
-    try{
-      const tunnel = localtunnel(_.get(this.serverless, 'custom.localtunnel.port', 8080), {subdomain: _.get(this.serverless, 'custom.localtunnel.subdomain')}, (err, tunnel) => {
+    try {
+      const tunnel = localtunnel(_.get(this.serverless, 'service.custom.localtunnel.port', 8080), {subdomain: _.get(this.serverless, 'service.custom.localtunnel.subdomain')}, (err, tunnel) => {
         if (err) {
-          console.log(err)
+          this.serverless.cli.log('Localtunnel error')
         }else{
-          console.log(`Localtunnel.me started: ${tunnel.url}`)
+          this.serverless.cli.log(`Localtunnel.me started: ${tunnel.url}`)
         }
       })
       tunnel.on('close', () => {
-        console.log('Localtunnel closed')
+        console.log('runServer close')
+        this.serverless.cli.log('Localtunnel closed')
       })
-      tunnel.on('error', () => {
+      tunnel.on('error', e => {
+        console.log('runServer error')
+        this.serverless.cli.log('Localtunnel error')
         if(serverRestarted) return
         serverRestarted = true
-        setTimeout(this.runServer, 2000)
+        setTimeout(this.runServer.bind(this), 2000)
       })
     } catch (e) {
       if(serverRestarted) return
       serverRestarted = true
-      setTimeout(this.runServer, 2000)
+      setTimeout(this.runServer.bind(this), 2000)
     }
   }
 }
 
-module.exports = LocalTunnel;
+module.exports = ServerlessLocaltunnel;
