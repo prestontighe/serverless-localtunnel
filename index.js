@@ -24,7 +24,7 @@ class ServerlessLocaltunnel {
     try {
       tunnel = localtunnel(_.get(this.serverless, 'service.custom.localtunnel.port', 8080), {subdomain: _.get(this.serverless, 'service.custom.localtunnel.subdomain')}, (err, tunnel) => {
         if (err) {
-          this.serverless.cli.log('Localtunnel error')
+          this.serverless.cli.log(`Localtunnel.me error: ${err.message}`)
         }else{
           this.serverless.cli.log(`Localtunnel.me started: ${tunnel.url}`)
         }
