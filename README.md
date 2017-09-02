@@ -11,7 +11,7 @@ plugins:
   - serverless-offline
   - serverless-localtunnel
 ```
-You are required to run serverless-offline before local-tunnel. You have to have serverless-offline enabled to run this plugin.
+You are required to run serverless-offline before serverless-localtunnel. You have to have serverless-offline enabled to run this plugin.
 ```
 custom:
   localtunnel:
