@@ -1,4 +1,5 @@
 # Serverless Localtunnel
+[![npm](https://img.shields.io/npm/v/npm.svg)]()
 Runs a localtunnel in your Serverless build process
 
 ## Usage
