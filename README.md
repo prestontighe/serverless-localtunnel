@@ -1,5 +1,8 @@
 # Serverless Localtunnel
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 [![npm](https://img.shields.io/npm/v/npm.svg)]()
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
+
 Runs a localtunnel in your Serverless build process
 
 ## Usage
