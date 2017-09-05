@@ -4,7 +4,7 @@
   "description": "Runs a localtunnel in your Serverless build process",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Needs tests :)\" && exit 0"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,8 @@
   "dependencies": {
     "localtunnel": "^1.8.3",
     "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "jest": "^21.0.1"
   }
 }

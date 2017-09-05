@@ -16,11 +16,23 @@ plugins:
   - serverless-localtunnel
 ```
 You are required to run serverless-offline before serverless-localtunnel. You have to have serverless-offline enabled to run this plugin.
+
+### Single Tunnel
 ```
 custom:
   localtunnel:
-    subdomain: my-custom-subdomain
+    subdomain: mysubdomain
     port: 8080
+```
+### Multi tunnel
+Ex: Frontend & backend
+```
+custom:
+  localtunnel:
+    - subdomain: mysubdomainbackend
+      port: 8080
+    - subdomain: mysubdomainfrontend
+      port: 3000
 ```
 ## Contributing
 
