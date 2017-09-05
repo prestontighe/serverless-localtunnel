@@ -39,18 +39,12 @@ test('Multi tunnel setup', () => {
       localtunnel: [{
         port: 2001,
         subdomain: '078v25vc2502039v8y0'
-      },{
-        port: 2002,
-        subdomain: '4369749sfldkgoiwgwno'
-      },{
-        port: 2003,
-        subdomain: 'v57w9v5nw97e5v9w7n59'
       }]
     }
   }
   const serverlessLocaltunnel = new ServerlessLocaltunnel(serverless)
   const tunnels = serverlessLocaltunnel.runServer()
-  expect(tunnels).toHaveLength(3);
+  expect(tunnels).toHaveLength(1);
   tunnels.forEach(tunnel => {
     tunnel.close()
   })
