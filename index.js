@@ -28,7 +28,7 @@ class ServerlessLocaltunnel {
       if(serverRestarted) return
       serverRestarted = true
       tunnel.close()
-      setTimeout(this.runTunnel(port, subdomain), 15000)
+      setTimeout(this.runTunnel.bind(this, port, subdomain), 15000)
     }
     try {
       tunnel = localtunnel(port, {subdomain}, (err, tunnel) => {
