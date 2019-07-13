@@ -16,7 +16,8 @@ class ServerlessLocaltunnel {
     }
     // Run tunnels after serverless-offline
     this.hooks = {
-      'before:offline:start:init': this.runServer.bind(this)
+      "before:offline:start": this.runServer.bind(this),
+      "before:offline:start:init": this.runServer.bind(this)
     }
   }
   runTunnel(port, subdomain) {
