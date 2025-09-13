@@ -1,6 +1,6 @@
 {
   "name": "serverless-localtunnel",
-  "version": "0.0.17",
+  "version": "0.0.16",
   "description": "Runs a localtunnel in your Serverless build process",
   "main": "index.js",
   "scripts": {
