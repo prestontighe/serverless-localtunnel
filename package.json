@@ -1,6 +1,6 @@
 {
   "name": "serverless-localtunnel",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Runs a localtunnel in your Serverless build process",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/toosick/serverless-localtunnel.git"
+    "url": "git+https://github.com/prestontighe/serverless-localtunnel.git"
   },
   "keywords": [
     "localtunnel",
@@ -18,17 +18,23 @@
     "localhost",
     "lambda"
   ],
-  "author": "Preston Tighe <preston_tighe@yahoo.com> (https://github.com/toosick)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/toosick/serverless-localtunnel/issues"
+    "url": "https://github.com/prestontighe/serverless-localtunnel/issues"
   },
-  "homepage": "https://github.com/toosick/serverless-localtunnel#readme",
+  "homepage": "https://github.com/prestontighe/serverless-localtunnel#readme",
   "dependencies": {
     "localtunnel": "^1.8.3",
     "lodash": "^4.17.4"
   },
   "devDependencies": {
     "jest": "^21.0.1"
+  },
+  "volta": {
+    "node": "18.17.0",
+    "yarn": "1.22.19"
+  },
+  "engines": {
+    "node": "18.17.0"
   }
 }
